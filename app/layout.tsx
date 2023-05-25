@@ -1,23 +1,26 @@
-import '@styles/global.css'
+import "@styles/global.css";
+import React from "react";
+import { Metadata } from "next";
 
-export const metadata = {
-  title: "Promptopia", description: "Discover & Share AI Prompts"
-}
+export const metadata: Metadata = {
+  title: "Promptopia",
+  description: "Discover & Share AI Prompts",
+};
 
-const RootLayout = ({ children }) => {
-  return (<html lang="en">
-    <body>
-      <div>
-        <div className="main">
-          <div className="gradient"></div>
+const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <html lang="en">
+      <body>
+        <div>
+          <div className="main">
+            <div className="gradient"></div>
+          </div>
+
+          <main className="app">{children}</main>
         </div>
+      </body>
+    </html>
+  );
+};
 
-        <main className="app">
-          {children}
-        </main>
-      </div>
-    </body>
-    </html>)
-}
-
-export default RootLayout
+export default RootLayout;
